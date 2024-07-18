@@ -1,7 +1,12 @@
-
+import  { useState } from 'react';
 
 const Login = () => {
+  const [inputValue, setInputValue] = useState('');
+  const handleChange = (event) => {
+    setInputValue(event.target.value);
+  };
   const google = () => {
+    localStorage.setItem('OpenAiKey', inputValue);
      window.open("http://localhost:8001/auth/google", "_self");
   }
   return (
@@ -30,9 +35,9 @@ const Login = () => {
       <span className="ml-4">Sign Up with Google</span>
     </button>
     <div className="w-full max-w-xs  mt-28">
-  <input
+  <input onChange={handleChange} value={inputValue}
     className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
-    type="email"
+    type="text"
     placeholder="openapi"
   />
  

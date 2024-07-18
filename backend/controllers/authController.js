@@ -1,6 +1,6 @@
 import passport from 'passport';
 
-export const googleAuth = passport.authenticate('google', { scope: ['profile','email'] });
+export const googleAuth = passport.authenticate('google', { scope: ['profile','email','https://www.googleapis.com/auth/gmail.readonly'] });
 
 export const googleAuthCallback = passport.authenticate('google', { failureRedirect: '/',successRedirect: 'http://localhost:5173/email' });
 
@@ -18,9 +18,12 @@ export const LoginSuccess=(req,res)=>{
 export const logout = (req, res) => {
     req.logout((err) => {
         if (err) {
-          return next(err);
+        //   return next(err);
+        console.log(err)
+        }else{
+            res.redirect('http://localhost:5173');
         }
        
-        res.redirect('http://localhost:5173');
+       
       });
 };

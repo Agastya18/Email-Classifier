@@ -6,6 +6,12 @@ import Emailpage from './pages/Emailpage.jsx';
 import axios from 'axios';
 import Navbar from './components/Navbar.jsx';
 import { useState,useEffect } from 'react';
+const EmailWithNavbar = ({ user }) => (
+  <>
+    <Navbar user={user} />
+    <Emailpage />
+  </>
+);
 function App() {
 
   const [user, setUser] = useState(null)
@@ -33,11 +39,11 @@ function App() {
 
   return (
     <>
-    <Navbar user={user}/>
+    {/* <Navbar user={user}/> */}
     <Routes>
       <Route path="/" element={user? <Navigate to={'/email'}/>:<Login/>} />
      
-      <Route path="/email" element={user? <Emailpage/>:<Navigate to={'/'}/>} />
+      <Route path="/email" element={user? <EmailWithNavbar user={user} />:<Navigate to={'/'}/>} />
       </Routes>
       </>
   )
