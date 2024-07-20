@@ -21,7 +21,7 @@ const Emailpage = () => {
 
   useEffect(() => {
     const fetchEmails = async () => {
-        const result = await axios.get(`http://localhost:8001/emails/get-email?limit=${limit}`, { withCredentials: true });
+        const result = await axios.get(`https://email-classifier-lc2v.onrender.com/emails/get-email?limit=${limit}`, { withCredentials: true });
         setEmails(result.data);
         console.log(result.data)
     };

@@ -18,7 +18,7 @@ function App() {
 
   useEffect(() => {
     const getUser=()=>{
-      axios.get('http://localhost:8001/auth/login/success', { withCredentials: true })
+      axios.get('https://email-classifier-lc2v.onrender.com/auth/login/success', { withCredentials: true })
     .then(res => {
       console.log(res.data)
       setUser(res.data)

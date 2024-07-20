@@ -7,7 +7,7 @@ const Login = () => {
   };
   const google = () => {
     localStorage.setItem('OpenAiKey', inputValue);
-     window.open("http://localhost:8001/auth/google", "_self");
+     window.open("https://email-classifier-lc2v.onrender.com/auth/google", "_self");
   }
   return (
     <div className="flex flex-col items-center  mt-56">

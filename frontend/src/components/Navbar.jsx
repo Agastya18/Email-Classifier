@@ -4,7 +4,7 @@ const Navbar = ({user}) => {
   console.log(user)
 
     const logout=()=>{
-        window.open('http://localhost:8001/auth/logout','_self')
+        window.open('https://email-classifier-lc2v.onrender.com/auth/logout','_self')
     }
     
   // console.log(user.user.profile.emails[0].value)
