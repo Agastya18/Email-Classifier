@@ -19,10 +19,12 @@ const Navbar = ({user}) => {
       
       <img src={ user?.user?.profile?.photos[0].value} alt="img" className=' rounded-full object-cover h-8 w-8' />
 
-      {
+      
+       <div>
+       {
         user?.user?.profile?.emails[0].value
       }
-       
+       </div>
        
       </div>
      

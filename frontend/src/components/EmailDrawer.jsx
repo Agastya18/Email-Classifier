@@ -13,7 +13,10 @@ const EmailDrawer = ({emails}) => {
         document.getElementById('my-drawer').checked = true;
       };
 
-     
+      const getHeaderValue = (headers, name) => {
+        const header = headers.find(header => header.name === name);
+        return header ? header.value : '';
+      };
 
   return (
     <div className="drawer drawer-end">
@@ -45,7 +48,7 @@ const EmailDrawer = ({emails}) => {
           <span className="bg-green-100 text-green-800 px-2 py-1 rounded-md">Important</span>
         </div>
               <p className='mb-2'><strong>From:</strong> {selectedEmail.payload.headers.find(header => header.name === 'From').value}</p>
-              <p className='mb-1'><strong>Subject:</strong> {selectedEmail.payload.headers.find(header => header.name === 'Subject').value}</p>
+              <p className='mb-1'><strong>Subject:</strong> {getHeaderValue(selectedEmail.payload.headers, 'Subject') || 'No subject'}</p>
               <p><strong>Mail:</strong> {selectedEmail.snippet ? selectedEmail.snippet : 'No content'}</p>
 
               {/* <div dangerouslySetInnerHTML={{ __html: selectedEmail.payload.body }}></div> */}
