@@ -1,4 +1,4 @@
-import { fetchEmails,classifyEmail} from '../services/emailService.js';
+import { fetchEmails} from '../services/emailService.js';
 import { google } from 'googleapis';
 
 import dotenv from 'dotenv';
@@ -29,8 +29,8 @@ export const getEmails = async (req, res) => {
 }
 
 
-export const classifyEmails = async (req, res) => {
-    const { openaiApiKey, emails } = req.body;
-    const classifiedEmails = await Promise.all(emails.map(email => classifyEmail(openaiApiKey, email)));
-    res.json(classifiedEmails);
-};
+// export const classifyEmails = async (req, res) => {
+//     const { openaiApiKey, emails } = req.body;
+//     const classifiedEmails = await Promise.all(emails.map(email => classifyEmail(openaiApiKey, email)));
+//     res.json(classifiedEmails);
+// };

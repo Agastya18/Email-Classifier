@@ -7,7 +7,7 @@ const Emailpage = () => {
   const [emails, setEmails] = useState([]);
   const [limit, setLimit] = useState(15);
   const [isClassified, setIsClassified] = useState(false);
-  const [classifiedEmails, setClassifiedEmails] = useState([]);
+ const [classifiedEmails, setClassifiedEmails] = useState([]);
   const [openaiApiKey, setOpenaiApiKey] = useState(localStorage.getItem('openaiApiKey') || '');
 
   const handleSelect = (number) => {
@@ -29,12 +29,12 @@ const Emailpage = () => {
    
 }, [limit]);
 console.log(emails)
-const classifyEmails = async () => {
-  const result = await axios.post('/emails/classify', { openaiApiKey, emails });
+// const classifyEmails = async () => {
+//   const result = await axios.post('/emails/classify', { openaiApiKey, emails });
  
-  setClassifiedEmails(result.data);
-  setIsClassified(true);
-};
+//   setClassifiedEmails(result.data);
+//   setIsClassified(true);
+// };
 const emailsToDisplay = isClassified ? classifiedEmails : emails;
   return (
 
@@ -52,7 +52,7 @@ const emailsToDisplay = isClassified ? classifiedEmails : emails;
    
   </ul>
 </div>
-      <button onClick={classifyEmails} className="btn  btn-active btn-secondary text-xs mr-2">Classify</button>
+      <button className="btn  btn-active btn-secondary text-xs mr-2">Classify</button>
     </div>
 
 <EmailDrawer emails={emailsToDisplay}/>
