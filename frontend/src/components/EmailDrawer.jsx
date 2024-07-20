@@ -31,7 +31,7 @@ const EmailDrawer = ({emails}) => {
               </p>
               <p className="text-sm">{email.payload.headers.find(header => header.name === 'Subject').value}</p>
               <div className="flex justify-end">
-                <span className="bg-green-100 text-green-800 px-2 py-1 rounded-md">Important</span>
+                {/* <span className="bg-green-100 text-green-800 px-2 py-1 rounded-md">Important</span> */}
               </div>
             </div>
           ))
