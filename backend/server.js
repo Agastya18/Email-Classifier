@@ -19,7 +19,7 @@ app.use(passport.session());
 
 app.use(cors(
     {
-        origin: 'http://localhost:5173',
+        origin: 'https://email-classifier-lc2v.onrender.com',
         methods: ['GET', 'POST'],
         credentials: true
     }
