@@ -1,5 +1,5 @@
 import { google } from 'googleapis';
-// import axios from 'axios';
+import axios from 'axios';
 
 export const fetchEmails = async (access_token,limit) => {
   
@@ -16,15 +16,15 @@ export const fetchEmails = async (access_token,limit) => {
     return emails.map(email => email.data);
 };
 
-// export const classifyEmail = async (openaiApiKey, email) => {
-//     const response = await axios.post('https://api.openai.com/v1/classifications', {
-//         model: 'gpt-4',
-//         query: email.snippet,
-//         labels: ['important', 'promotional', 'social', 'marketing', 'spam', 'general']
-//     }, {
-//         headers: {
-//             'Authorization': `Bearer ${openaiApiKey}`
-//         }
-//     });
-//     return response.data.label;
-// };
+export const classifyEmail = async (openaiApiKey, email) => {
+    const response = await axios.post('https://api.openai.com/v1/classifications', {
+        model: 'gpt-4',
+        query: email.snippet,
+        labels: ['important', 'promotional', 'social', 'marketing', 'spam', 'general']
+    }, {
+        headers: {
+            'Authorization': `Bearer ${openaiApiKey}`
+        }
+    });
+    return response.data.label;
+};

@@ -21,20 +21,20 @@ const Emailpage = () => {
 
   useEffect(() => {
     const fetchEmails = async () => {
-        const result = await axios.get(`https://email-classifier-lc2v.onrender.com/emails/get-email?limit=${limit}`, { withCredentials: true });
+        const result = await axios.get(`http://localhost:8001/emails/get-email?limit=${limit}`, { withCredentials: true });
         setEmails(result.data);
         console.log(result.data)
     };
     fetchEmails();
    
 }, [limit]);
-console.log(emails)
-// const classifyEmails = async () => {
-//   const result = await axios.post('/emails/classify', { openaiApiKey, emails });
+// console.log(emails)
+const classifyEmails = async () => {
+  const result = await axios.post('/emails/classify', { openaiApiKey, emails });
  
-//   setClassifiedEmails(result.data);
-//   setIsClassified(true);
-// };
+  setClassifiedEmails(result.data);
+  setIsClassified(true);
+};
 const emailsToDisplay = isClassified ? classifiedEmails : emails;
   return (
 
@@ -47,6 +47,7 @@ const emailsToDisplay = isClassified ? classifiedEmails : emails;
   <li><a onClick={() => handleSelect('2')}>2</a></li>
   <li><a onClick={() => handleSelect('5')}>5</a></li>
   <li><a onClick={() => handleSelect('12')}>12</a></li>
+    <li><a onClick={() => handleSelect('15')}>15</a></li>
     <li><a onClick={() => handleSelect('21')}>21</a></li>
     
    
