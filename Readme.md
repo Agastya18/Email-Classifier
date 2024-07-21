@@ -97,6 +97,11 @@ Go to frondend and run
 ![App Screenshot](https://i.ibb.co/s1sfSKQ/4ec.png)
 
 
+## Deployment Artical (by me)
+
+[Documentation](https://medium.com/@agastyagaur/deploying-a-mern-stack-application-on-a-unified-server-a-step-by-step-guide-to-cost-free-hosting-a9c2eb0e23a1)
+
+
 
 
 
