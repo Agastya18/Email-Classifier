@@ -20,7 +20,7 @@ function App() {
     const getUser=()=>{
       axios.get('http://localhost:8001/auth/login/success', { withCredentials: true })
     .then(res => {
-      console.log(res.data)
+     // console.log(res.data)
       setUser(res.data)
     })
     .catch(err => {

@@ -5,7 +5,8 @@ const router = express.Router();
 
 
 
-router.get('/get-email', getEmails);
+
+router.get('/get-email',getEmails);
 router.post('/classify', classifyEmails);
 
 

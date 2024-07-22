@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Navbar = ({user}) => {
-  console.log(user)
+//  console.log(user)
 
     const logout=()=>{
         window.open('http://localhost:8001/auth/logout','_self')
